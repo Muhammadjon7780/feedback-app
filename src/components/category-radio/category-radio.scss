@@ -1,0 +1,23 @@
+.category-label{
+  display: block;
+  // width: fit-content;
+  margin-right: 8px;
+  margin-bottom: 14px;
+}
+
+.category-label:last-child{
+margin-right: 0;
+}
+
+.ctegory-radio{
+  display: block;
+}
+.category-label:hover .category-radio__text {
+  cursor: pointer;
+  background-color: #CFD7FF;
+}
+
+.category-radio:checked + .category-radio__text {
+  background-color: #4661E6;
+  color: #fff;
+}

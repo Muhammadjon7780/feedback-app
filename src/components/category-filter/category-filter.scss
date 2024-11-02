@@ -1,0 +1,15 @@
+.category__wrap__filter{
+    padding: 24px 45px 24px 24px;
+    
+    &-title{
+      margin: 0;
+      padding: 0;
+    }
+
+    &-inner{
+      display: flex;
+      flex-wrap: wrap;  
+      justify-content: flex-start;
+    }
+
+  }

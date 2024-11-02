@@ -1,0 +1,31 @@
+.title-label{
+  display: block;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20.23px;
+  color: #3A4374;
+  margin-left: 42px;
+  margin-bottom: 24px;
+  
+  &__span{
+    display: block;
+    font-family: Jost;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.23px;
+    color: #647196;
+    margin-bottom: 16px;
+    
+  }
+}
+
+.title-input{
+  display: block;
+  width: 456px;
+  height: 48px;
+  // margin: 0 auto;
+  background-color: #F7F8FD;
+  border: none;
+  outline-color: #4661E6;
+}

@@ -1,0 +1,31 @@
+
+.add-section{
+  display: block;
+  width: 540px;
+  margin: 0 auto;
+  
+  &__title{
+    font-family: Jost;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    color: #3A4374;
+    margin-left: 42px;
+  }
+
+  &__link{
+    margin-top: 92px;
+  }
+}
+
+.add-container{
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+
+  &__popup{
+    left: 8%;
+  }
+}
+

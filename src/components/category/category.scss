@@ -1,0 +1,17 @@
+.category{
+  display: block;
+  font-family: Jost;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19px;
+  color: #4661E6;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 5px 16px 6px;
+  margin: 0;
+  background-color: #F2F4FF;
+}
+
+.category:last-child{
+  margin-right: 0;
+}

@@ -1,0 +1,48 @@
+@import "../../sass/mixins.scss";
+
+.select-popup{
+  @include reset-list;
+  display: none;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 220px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 10px 40px -7px #373F6859;
+  border-radius: 10px;
+  
+  &__item{
+    border-bottom: 1px solid rgba(58, 67, 116, 0.15);
+  }
+  
+  &__option-label{
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover{
+      color: rgba(173, 31, 234, 1);
+      
+    }
+  }
+}
+
+
+.select-popup__option-tick{
+  display: none;
+  width: 11px;
+  height: 8px;
+  background: url("../../assets/images/tick.svg") no-repeat center center;
+  background-size: contain;
+  margin-left: auto;
+  transition: 0.6s ease all;
+}
+
+.select-popup__option:checked + .select-popup__option-tick{
+  display: block;
+}
+
+.select-popup--opened{
+  display: block;
+}

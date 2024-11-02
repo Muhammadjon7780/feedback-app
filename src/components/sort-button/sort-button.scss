@@ -1,0 +1,56 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+
+.sort-btn-wrap{
+  display: flex;
+  align-items: center;
+  
+}
+
+.sort-button{
+  @include reset-btn;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  background-color: #373F68;
+  color: #F2F4FE;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 10px 0px 0px 0px;
+  transition: 0.1s ease all;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  
+  
+  
+  
+  &__arrow{
+    
+    transition: 0.2s ease all;
+
+    &--closed{
+      display: block;
+      width: 14px;
+      height: 6px;
+      background: url("../../assets/images/close-arrow.svg") no-repeat top right;
+      background-size: contain;
+      margin-left: auto;
+    }
+
+      &--opened{
+        display: block;
+        width: 14px;
+        height: 6px;
+        background: url("../../assets/images/open-arrow.svg") no-repeat top right;
+        background-size: contain;
+        margin-left: auto;
+        z-index: 2;
+        
+    }
+  }
+  
+}

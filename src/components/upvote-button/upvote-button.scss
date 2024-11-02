@@ -1,0 +1,44 @@
+@import "../../sass/mixins.scss";
+
+.upvote-btn {
+  @include reset-btn;
+  display: block;
+  width: 40px;
+  padding: 26px 11px 9px 11px;
+  font-family: Jost;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: #3a4374;
+  background-color: #f2f4fe;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 40px;
+
+  &:hover{
+    background-color: #CFD7FF;
+  }
+  
+  &__svg {
+    display: block;
+    color: #4661e6;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 14px;
+    right: 16px;
+  }
+  
+
+
+    &__liked{
+      background-color: #4661E6;
+      color: #FFFFFF;
+  
+      &:hover{
+      background-color: #4661E6;
+      }
+    }
+
+}

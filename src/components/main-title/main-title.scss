@@ -1,0 +1,34 @@
+.main__title{
+  background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%);
+  border-radius: 10px;
+  margin-bottom: 24px;
+  
+  &-head{
+    display: flex;
+    flex-direction: column;
+    max-width: 255px;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    padding: 62px 70px 24px 24px;
+
+    &-strong{
+      font-family: "Jost";
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &-span{
+      display: block;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 21px;
+      
+    }
+  }
+
+}

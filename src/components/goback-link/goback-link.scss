@@ -1,0 +1,31 @@
+.back-link{
+  display: block;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: #647196;
+  margin-left: 15px;
+  position: relative;
+  text-decoration: none;
+
+  
+  &__icon{
+    width: 7px;
+    height: 6px;
+    position: absolute;
+    top: 8px;
+    left: -15px;
+    color: #4661E6;
+    transform: rotate(-90deg);
+    
+  }
+
+  &:hover{
+    text-decoration: underline;
+    color: rgba(100, 113, 150, 0.8);
+
+  }
+  
+}
