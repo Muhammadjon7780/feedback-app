@@ -1,3 +1,4 @@
+import UpvotSvg from "../upvote-svg/upvote-svg";
 import "./sort-button.scss";
 
 const SortButton = ({className="", children, isOpen, ...props}) =>{
@@ -7,7 +8,7 @@ const SortButton = ({className="", children, isOpen, ...props}) =>{
       <button className={`sort-button ${className}`} {...props}> 
         {children}
         </button>
-        <span className={`sort-button__arrow ${isOpen? "sort-button__arrow--opened" :"sort-button__arrow--closed"}`}></span>
+        <UpvotSvg className="sort-button__arrow" isOpen={isOpen}/>
     </div>
   )
 }

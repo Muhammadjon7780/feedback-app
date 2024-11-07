@@ -1,0 +1,37 @@
+@import "../../sass/mixins.scss";
+
+.add-category-wrap{
+  margin-bottom: 24px;
+  position: relative;
+  &__popup{
+    left: 7%;
+  }
+}
+
+.option__btn-wrap {
+  display: flex;
+  align-items: center;
+  width: 456px;
+  margin-left: 42px;
+  background-color: #f7f8fd;
+  border-radius: 5px;
+  height: 50px;
+
+  &:hover{
+    border: 2px solid #4661E6;
+    cursor: pointer;
+    }
+}
+
+.option-btn {
+  @include reset-btn;
+  padding: 13px 24px;
+  width: 100%;
+  text-align: left;
+}
+
+.option-svg {
+  display: block;
+  margin-right: 24px
+}
+

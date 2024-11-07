@@ -11,7 +11,7 @@ const ElBtn = forwardRef((props, ref) => <button ref={ref} {...props} ></button>
 const Button = forwardRef((proporties, ref) => {
   
   
-  const{ to, className="", ...props } = proporties
+  const{ to, className="", type, ...props } = proporties
 
   const Component = to ? ElLink : ElBtn;
 
@@ -19,7 +19,8 @@ const Button = forwardRef((proporties, ref) => {
     <>
       <Component ref={ref}
       to={to}  {...props}
-      className={`button ${className}`} />
+      className={`button ${className}`}
+      type={type} />
     </>
   )
 })

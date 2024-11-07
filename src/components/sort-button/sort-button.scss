@@ -24,31 +24,34 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+  margin-right: 4px;
   
   
   
   
   &__arrow{
-    
+    display: inline-block;
+    width: 14px;
+    height: 6px;
+    color: #fff;
+    margin-left: auto;
+    margin-top: 3px;
     transition: 0.2s ease all;
+
 
     &--closed{
       display: block;
-      width: 14px;
-      height: 6px;
-      background: url("../../assets/images/close-arrow.svg") no-repeat top right;
-      background-size: contain;
-      margin-left: auto;
+      // background: url("../../assets/images/close-arrow.svg") no-repeat top right;
+      // background-size: contain;
     }
 
       &--opened{
         display: block;
         width: 14px;
         height: 6px;
-        background: url("../../assets/images/open-arrow.svg") no-repeat top right;
-        background-size: contain;
-        margin-left: auto;
-        z-index: 2;
+        // background: url("../../assets/images/open-arrow.svg") no-repeat top right;
+        // background-size: contain;
+        transform: rotate(180deg);
         
     }
   }

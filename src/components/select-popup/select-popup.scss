@@ -3,6 +3,7 @@
 .select-popup{
   @include reset-list;
   display: none;
+  width: 100%;
   position: absolute;
   top: calc(100% + 16px);
   left: 220px;

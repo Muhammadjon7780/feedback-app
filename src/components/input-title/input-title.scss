@@ -1,3 +1,4 @@
+
 .title-label{
   display: block;
   font-family: Jost;
@@ -7,6 +8,7 @@
   color: #3A4374;
   margin-left: 42px;
   margin-bottom: 24px;
+
   
   &__span{
     display: block;
@@ -24,8 +26,16 @@
   display: block;
   width: 456px;
   height: 48px;
-  // margin: 0 auto;
   background-color: #F7F8FD;
   border: none;
+  border-radius: 5px;
+  outline: none;
   outline-color: #4661E6;
+
+
+  &:hover{
+  outline: 2px solid #4661E6;
+  cursor: pointer;
+  
+  }
 }
