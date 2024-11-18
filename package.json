@@ -1,29 +1,30 @@
 {
   "name": "feedback-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.78.0",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "scripts": {
+    "test": "react-scripts test",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuhammadjonIsmoiljonov/feedback-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuhammadjonIsmoiljonov/feedback-app/issues"
+  },
+  "homepage": ".",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "sass": "^1.80.7"
   },
   "browserslist": {
     "production": [
@@ -39,6 +40,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "webpack-dev-server": "^5.1.0"
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1",
+    "react-scripts": "^5.0.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass-loader": "^16.0.3"
   }
 }

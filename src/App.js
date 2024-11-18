@@ -7,15 +7,14 @@ import NotFound from "./screens/not-found/not-found";
 import "./sass/main.scss"
 import Feedback from "./screens/feedback/feedback";
 import DataProvider from "./contexts/context-data";
-// import 'antd/dist/reset.css';
 
 
 
 
 function App() {
 
-
   return(
+    
 <DataProvider>
     <Routes>
       <Route path="/" element={<Main />}/>

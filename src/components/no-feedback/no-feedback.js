@@ -11,7 +11,7 @@ const NoFeedback = () => {
           Got a suggestion? Found a bug that needs to be squashed? We love
           hearing about new ideas to improve our app.
         </p>
-        <Button className="no-feedback__btn">+ Add Feedback</Button>
+        <Button to="/add-feedback" className="no-feedback__btn">+ Add Feedback</Button>
       </div>
     </div>
   );

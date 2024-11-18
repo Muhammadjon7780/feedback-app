@@ -31,7 +31,7 @@ const Feedback = () => {
       <FeedbackBox className="feedback__page-wrap" key={post.id}>
               <div className="feedback-box__inner">
               <UpvoteButton
-                  data-id={post.id}
+                  data-id={post?.id}
                   className={`feedback-box__inner-upvote-btn ${post.isLiked ? "upvote-btn__liked" : ""}`}>
                   {post.upvotes}
                   </UpvoteButton>
@@ -54,22 +54,25 @@ const Feedback = () => {
     </Container>
 
 
+//     {/* <>
+// <section>
+// {<span>{post && post.title}</span>
+//       <h2>Recomended Fedbacks</h2>
+
+//       <ul>
+//         {data.productRequests.map((element) => 
+
+//         <li key={element.id}>
+//           <Link to={`feedback/${element.id}`}>{element.title}</Link>
+//         </li>)}
+
+//       </ul>
+//     </section> }
+
+//     </> */}
 
 
-    // {/* <span>{post && post.title}</span>
 
-    // <section>
-    //   <h2>Recomended Fedbacks</h2>
-
-    //   <ul>
-    //     {data.productRequests.map((element) => 
-
-    //     <li key={element.id}>
-    //       <Link to={`feedback/${element.id}`}>{element.title}</Link>
-    //     </li>)}
-
-    //   </ul>
-    // </section> */}
     
   )
 }

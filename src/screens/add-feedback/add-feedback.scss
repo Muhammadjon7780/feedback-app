@@ -1,22 +1,23 @@
 
 
 .add-section {
+  margin: 0 auto;
   display: block;
   width: 540px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-
+  margin-top: 92px;
+  
   &__title {
-    font-family: Jost;
+    margin: 0;
     font-size: 24px;
     font-weight: 700;
     line-height: 34px;
     color: #3a4374;
     margin-left: 42px;
+    padding-top: 52px;
   }
 
   &__link {
-    margin-top: 92px;
+    margin-bottom: 68px;
   }
 }
 
@@ -24,7 +25,24 @@
   margin: 0 auto;
   background-color: #fff;
   border-radius: 10px;
+  padding-bottom: 40px;
+  position: relative;
+
+  &::before{
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    background-image: url("../../assets/images/add-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    position: absolute;
+    top: -28px;
+    left: 42px;
+    content: "";
+  }
 }
+
 
 
 .add-btn-wrap{
@@ -32,6 +50,7 @@
   align-items: center;
   justify-content: flex-end;
   margin-right: 42px;
+
 }
 
 .add-cancel-btn{

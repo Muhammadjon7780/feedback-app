@@ -1,30 +1,47 @@
+import React, { forwardRef } from "react";
 import "./select-popup.scss";
 
-const SelectPopup = ({className="", onChange, isOpen, options, name, defaultValue, width="300px"}) =>{
-  return(
-    <ul onChange={onChange} style={{width}} className={`select-popup ${className} ${isOpen? "select-popup--opened" : ""}`} >
-
-      {options.map(option => (
-
-      <li key={option.value} className="select-popup__item">
-        <label className="select-popup__option-label">
-          <input 
-          defaultChecked={defaultValue === option.value}
-          defaultValue={option.value} 
-          className="select-popup__option visually-hidden" 
-          type="radio" 
-          name={name}/>
-          {option.text}
-          <span className="select-popup__option-tick"></span>
-        </label>
-      </li>
-
+const SelectPopup = forwardRef(({
+  className = "",
+  onOptionChange,
+  isOpen,
+  options,
+  checkedValue,
+  value,
+  width = "300px",
+  ...props
+}, ref) => {
+  
+  return (
+    <ul
+      onChange={onOptionChange}
+      style={{ width }}
+      className={`select-popup ${className} ${
+        isOpen ? "select-popup--opened" : ""
+      }`}
+    >
+      {options.map((option, index) => (
+        <li key={option.value} className="select-popup__item">
+          <label className="select-popup__option-label">
+            <input
+              className="select-popup__option visually-hidden"
+              ref={(el) => {
+                if (ref && ref.current) {
+                  ref.current[index] = el;
+                }
+              }}
+              defaultChecked={checkedValue === option.value}
+              defaultValue={option.value}
+              type="radio"
+              {...props}
+            />
+            {option.text}
+            <span className="select-popup__option-tick"></span>
+          </label>
+        </li>
       ))}
-
     </ul>
-  )
-}
+  );
+});
 
 export default SelectPopup;
-
-

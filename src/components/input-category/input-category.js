@@ -1,73 +1,80 @@
-import { useState } from "react";
-import SelectPopup from "../select-popup/select-popup";
-import UpvotSvg from "../upvote-svg/upvote-svg";
-import "./input-category.scss";
+  import { forwardRef, useState } from "react";
+  import SelectPopup from "../select-popup/select-popup";
+  import UpvotSvg from "../upvote-svg/upvote-svg";
+  import "./input-category.scss";
 
-const options = [
-  {
-    text: "Feature",
-    value: 1,
-  },
-  {
-    text: "UI",
-    value: 2,
-  },
-  {
-    text: "UX",
-    value: 3,
-  },
-  {
-    text: "Enhancement",
-    value: 4,
-  },
-  {
-    text: "Bug",
-    value: 5,
-  },
-];
+  const options = [
+    {
+      text: "Feature",
+      value: 1,
+    },
+    {
+      text: "UI",
+      value: 2,
+    },
+    {
+      text: "UX",
+      value: 3,
+    },
+    {
+      text: "Enhancement",
+      value: 4,
+    },
+    {
+      text: "Bug",
+      value: 5,
+    },
+  ];
 
-const InputCategory = () => {
-  const [isSortOpen, setSortOpen] = useState(false);
-  const [sortValue, setSortValue] = useState(options[0]?.value);
+  const InputCategory = forwardRef((proporties, ref) => {
+  const {...props} = proporties
+    
+    const [isSortOpen, setSortOpen] = useState(false);
+    const [sortValue, setSortValue] = useState(options[0]?.value);
 
-  const toggleSortPopup = () => {
-    setSortOpen(!isSortOpen);
-  };
+    const toggleSortPopup = () => {
+      setSortOpen(!isSortOpen);
+    };
 
-  const handleCategoryChange = (evt) => {
-    const values = +evt.target.value;
+    const handleCategoryChange = (evt) => {
+      evt.preventDefault();
 
-    setSortValue(values);
+      const values = +evt.target.value;
 
-    setSortOpen(false);
-  };
+      setSortValue(values);
 
-  return (
-    <div className="add-category-wrap">
-      <p className="title-label">
-      Category
-        <span className="title-label__span">
-        Choose a category for your feedback
-        </span>
-      </p>
+      setSortOpen(false);
+    };
 
-      <div className="option__btn-wrap">
-        <button className="option-btn" onClick={toggleSortPopup}>
-          {options.find((option) => option.value == +sortValue).text}
-        </button>
-        <UpvotSvg className="option-svg" isOpen={isSortOpen} />
+    return (
+      <div className="add-category-wrap">
+        <p className="title-label">
+        Category
+          <span className="title-label__span">
+          Choose a category for your feedback
+          </span>
+        </p>
+
+        <div className="option__btn-wrap">
+          <button type="button" className="option-btn" onClick={toggleSortPopup}>
+            {options.find((option) => option.value == +sortValue).text}
+          </button>
+          <UpvotSvg className="option-svg" isOpen={isSortOpen} />
+        </div>
+
+        <SelectPopup
+          className="add-category-wrap__popup"
+          ref={ref}
+          onOptionChange={handleCategoryChange}
+          checkedValue={sortValue}
+          value={sortValue}
+          isOpen={isSortOpen}
+          options={options}
+          // name="add"
+          width="456px"
+        { ...props}
+        />
       </div>
-
-      <SelectPopup
-        className="add-category-wrap__popup"
-        onChange={handleCategoryChange}
-        defaultValue={sortValue}
-        isOpen={isSortOpen}
-        options={options}
-        name="add"
-        width="456px"
-      />
-    </div>
-  );
-};
-export default InputCategory;
+    );
+  })
+  export default InputCategory;

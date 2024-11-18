@@ -20,7 +20,8 @@ const Button = forwardRef((proporties, ref) => {
       <Component ref={ref}
       to={to}  {...props}
       className={`button ${className}`}
-      type={type} />
+      type={type} 
+      />
     </>
   )
 })

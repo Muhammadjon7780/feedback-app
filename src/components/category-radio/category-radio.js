@@ -18,6 +18,7 @@ useEffect(() => {
 
   const handleInputChange = (evt) => {
     const categoryValue = evt.target.value
+    console.log(categoryValue);
     
     const filteredData = originalData?.filter((product) => {
       if (product.category === categoryValue) {
@@ -34,7 +35,7 @@ useEffect(() => {
     setData({
       ...data,
       productRequests: filteredData
-    });
+    })
   };
   
   return (

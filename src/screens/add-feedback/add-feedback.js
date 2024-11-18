@@ -4,28 +4,151 @@ import GoBackLink from "../../components/goback-link/goback-link";
 import InputCategory from "../../components/input-category/input-category";
 import InputDetail from "../../components/input-detail/input-detail";
 import Button from "../../components/button/button";
+import { useRef, useState } from "react";
+import { useData } from "../../contexts/context-data";
+import { useNavigate } from "react-router-dom";
+const options = [
+  {
+    text: "feature",
+    value: 1,
+  },
+  {
+    text: "ui",
+    value: 2,
+  },
+  {
+    text: "ux",
+    value: 3,
+  },
+  {
+    text: "enhancement",
+    value: 4,
+  },
+  {
+    text: "bug",
+    value: 5,
+  },
+];
 
+const warning = [
+  { name: "detailValue", error: "Can’t be empty" },
+  { name: "inputValue", error: "musn't be empty" },
+];
 
 const AddFeedback = () => {
+  const { data, setData } = useData();
 
+  const navigate = useNavigate()
+  
+  const optionRef = useRef([]);
+  
+  
+  const [formData, setFormData] = useState({
+    inputValue: "",
+    popupValue: "",
+    detailValue: "",
+  });
+
+
+  const [error, setError] = useState([]);
+  const [titleError, setTitleError] = useState([]);
+  
+  
+  
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  
+  const defaultValue = +optionRef.current[0]?.defaultValue;
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+
+    const findCategory = options.find((option) =>
+      formData.popupValue ? option.value === +formData.popupValue : option.value === defaultValue
+    );
+    
+
+
+
+    if (formData.inputValue.trim() && formData.detailValue.trim()) {
+      const newData = {
+        id: Math.floor(Math.random() * 1000),
+        title: formData.inputValue,
+        category: findCategory.text,
+        upvotes: 0,
+        status: "suggestion",
+        description: formData.detailValue,
+        comments: [],
+      };
+
+      const newProductRequests = [newData, ...data.productRequests];
+
+      setData({
+        ...data,
+        productRequests: newProductRequests,
+      });
+
+      navigate("/");
+    }
+
+
+    setError(!formData.detailValue?.trim() ? warning : []);
+    setTitleError(!formData.inputValue?.trim() ? warning : [])
+
+
+  };
 
   return (
     <section className="add-section">
       <GoBackLink className="add-section__link" />
       <div className="add-container">
         <h1 className="add-section__title">Create New Feedback</h1>
-        <form action="#">
 
-        <InputTitle />
+        <form onSubmit={handleSubmit} action="#" method="post">
+          <InputTitle
+            name="inputValue"
+            value={formData.inputValue || ""}
+            onChange={handleChange}
+            showTitleError={titleError}
+          />
 
-        <InputCategory/>
+          <InputCategory
+            onChange={handleChange}
+            ref={optionRef}
+            name="popupValue"
+          />
 
-        <InputDetail required="required"/>
+          <InputDetail
+            name="detailValue"
+            value={formData.detailValue || ""}
+            onChange={handleChange}
+            showError={error}
+          ></InputDetail>
 
-      <div className="add-btn-wrap">
-        <Button className="add-cancel-btn">Cancel</Button>
-        <Button className="add-added-btn" type="submit">Add Feedback</Button>
-      </div>
+          <div className="add-btn-wrap">
+
+            <Button 
+            className="add-cancel-btn"
+            onClick={() => navigate("/")}
+            type="button"
+            >
+              Cancel
+            </Button>
+            
+            <Button
+              className="add-added-btn"
+              type="submit"
+            >
+              Add Feedback
+            </Button>
+          </div>
         </form>
       </div>
     </section>
