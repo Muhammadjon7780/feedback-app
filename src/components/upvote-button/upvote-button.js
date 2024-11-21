@@ -3,8 +3,8 @@ import UpvotSvg from "../upvote-svg/upvote-svg";
 import "./upvote-button.scss";
 
 const UpvoteButton = ({ children, className, ...props }) => {
-  const { data, setData } = useData();
-
+  
+  const { data, setData, originalData, setOriginalData } = useData();
 
   const handleLikeClick = (evt) => {
     const clickedId = +evt.target.dataset.id;
@@ -17,8 +17,18 @@ const UpvoteButton = ({ children, className, ...props }) => {
       upvotes: !neededProduct.isLiked? neededProduct.upvotes + 1 : neededProduct.upvotes - 1
     }
     
-    const changedProductIndex = data.productRequests.findIndex(product => product.id === clickedId)
 
+    
+    const showChangedProductIndex = originalData.findIndex(product => product.id === clickedId)
+    
+    setOriginalData([
+      ...originalData.slice(0, showChangedProductIndex),
+      changedProduct,
+      ...originalData.slice(showChangedProductIndex + 1)
+    ])
+    
+    const changedProductIndex = data.productRequests.findIndex(product => product.id === clickedId)
+    
     setData({
       ...data,
       productRequests:[
@@ -28,7 +38,7 @@ const UpvoteButton = ({ children, className, ...props }) => {
       ]
     })
     
-  };  
+  }; 
 
 
   return (

@@ -5,7 +5,7 @@ const Smt = () =>{
 const [count, setCount] = useState(0)
 const [decCount, setDecCount] = useState(10)
 
-const showCount = useCallback(() => console.log(count), [count]);
+// const showCount = useCallback(() => console.log(count), [count]);
 
 useEffect(() =>{
   showCount()

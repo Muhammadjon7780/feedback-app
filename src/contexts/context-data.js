@@ -4,6 +4,8 @@ export const DataContext = createContext();
 
 const DataProvider = ({...props}) => {
   const [data, setData] = useState(null);
+  const [originalData, setOriginalData] = useState([]);
+
   const [isFetched, setFetched] = useState(false);
 
   useEffect(() => {
@@ -11,24 +13,28 @@ const DataProvider = ({...props}) => {
       setFetched(true)
       fetch(`/data.json`)
       .then((response) => response.json())
-      .then((data) => setData({
-        ...data,
-        productRequests: data.productRequests.map(product => ({
+      .then((fetchData) => {
+        
+        const productRequests = fetchData.productRequests.map(product => ({
             ...product,
             isLiked:false
-          }
-        ))
-      }));
-      
-    }
-  }, [isFetched]);
+          }))
+
+          setData({...fetchData, productRequests});
+          
+          setOriginalData([...productRequests])
+        });
+        
+      }
+    }, [isFetched]);
+    
 
   if (!data) {
     return null;
   }
 
   return (
-  <DataContext.Provider value={{data, setData}} {...props}>
+  <DataContext.Provider value={{data, setData, originalData, setOriginalData}} {...props}>
   
   </DataContext.Provider>
   )

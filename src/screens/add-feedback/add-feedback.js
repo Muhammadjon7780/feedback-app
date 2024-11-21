@@ -4,9 +4,10 @@ import GoBackLink from "../../components/goback-link/goback-link";
 import InputCategory from "../../components/input-category/input-category";
 import InputDetail from "../../components/input-detail/input-detail";
 import Button from "../../components/button/button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useData } from "../../contexts/context-data";
 import { useNavigate } from "react-router-dom";
+
 const options = [
   {
     text: "feature",
@@ -36,46 +37,39 @@ const warning = [
 ];
 
 const AddFeedback = () => {
-  const { data, setData } = useData();
+  const { data, setData, originalData, setOriginalData } = useData();
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const optionRef = useRef([]);
-  
-  
+  const defaultValue = +optionRef.current[0]?.defaultValue;
+
   const [formData, setFormData] = useState({
     inputValue: "",
-    popupValue: "",
+    popupValue: options[0]?.value,
     detailValue: "",
   });
 
-
   const [error, setError] = useState([]);
   const [titleError, setTitleError] = useState([]);
-  
-  
-  
+
+  // const [originalData, setOriginalData] = useState(data.productRequests);
+
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
-  
-  const defaultValue = +optionRef.current[0]?.defaultValue;
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-
-    const findCategory = options.find((option) =>
-      formData.popupValue ? option.value === +formData.popupValue : option.value === defaultValue
+    const findCategory = options.find(
+      (option) => option.value === +formData.popupValue
     );
-    
-
-
 
     if (formData.inputValue.trim() && formData.detailValue.trim()) {
       const newData = {
@@ -90,6 +84,8 @@ const AddFeedback = () => {
 
       const newProductRequests = [newData, ...data.productRequests];
 
+      setOriginalData([newData, ...originalData]);
+
       setData({
         ...data,
         productRequests: newProductRequests,
@@ -98,11 +94,8 @@ const AddFeedback = () => {
       navigate("/");
     }
 
-
     setError(!formData.detailValue?.trim() ? warning : []);
-    setTitleError(!formData.inputValue?.trim() ? warning : [])
-
-
+    setTitleError(!formData.inputValue?.trim() ? warning : []);
   };
 
   return (
@@ -123,6 +116,8 @@ const AddFeedback = () => {
             onChange={handleChange}
             ref={optionRef}
             name="popupValue"
+            options={options}
+            value={formData.popupValue}
           />
 
           <InputDetail
@@ -133,19 +128,15 @@ const AddFeedback = () => {
           ></InputDetail>
 
           <div className="add-btn-wrap">
-
-            <Button 
-            className="add-cancel-btn"
-            onClick={() => navigate("/")}
-            type="button"
+            <Button
+              className="add-cancel-btn"
+              onClick={() => navigate("/")}
+              type="button"
             >
               Cancel
             </Button>
-            
-            <Button
-              className="add-added-btn"
-              type="submit"
-            >
+
+            <Button className="add-added-btn" type="submit">
               Add Feedback
             </Button>
           </div>

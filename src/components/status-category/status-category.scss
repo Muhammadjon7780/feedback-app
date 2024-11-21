@@ -1,13 +1,13 @@
 @import "../../sass/mixins.scss";
 
-.add-category-wrap{
+.edit-category-wrap{
   margin-bottom: 24px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
 
   &__popup{
-    left: 7%;
+    left: 42px;
 
   }
 }
@@ -32,7 +32,7 @@
   padding: 13px 24px;
   width: 100%;
   text-align: left;
-  // z-index: 1;
+  z-index: 1;
 }
 
 .option-svg {

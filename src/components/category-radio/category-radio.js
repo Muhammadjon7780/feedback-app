@@ -2,41 +2,45 @@ import Category from "../category/category";
 import { useData } from "../../contexts/context-data";
 import "./category-radio.scss";
 import "../../sass/general.scss";
-import { useEffect, useState } from "react";
-
+// import _ from 'lodash';
 const CategoryRadio = ({ children, ...props }) => {
-  const { data, setData } = useData();
+  const { data, setData, originalData } = useData();
 
-const [originalData, setOriginalData] = useState(data.productRequests);
 
-useEffect(() => {
-  if (data.productRequests && originalData.length === 0) {
-    setOriginalData(data.productRequests);
-  }
+// const [originalData, setOriginalData] = useState([]);
 
-}, [data.productRequests, originalData.length])
+
+// useEffect(() => {
+//   if (data.productRequests && originalData.length === 0) {
+//     setOriginalData([...data.productRequests]);
+
+//     // setOriginalData(JSON.parse(JSON.stringify(data.productRequests)));
+//     // const showData = _.cloneDeep(data.productRequests); 
+//     // setOriginalData(showData);
+
+
+
+//   }
+
+// }, [data.productRequests])
+
 
   const handleInputChange = (evt) => {
-    const categoryValue = evt.target.value
-    console.log(categoryValue);
+    const categoryValue = evt.target.value;
     
     const filteredData = originalData?.filter((product) => {
-      if (product.category === categoryValue) {
-        return product;
-      }
-      if(categoryValue === "all"){
+       
+      if(categoryValue === "all") return true 
+        return product.category === categoryValue
+    })
 
-        return true;
-      }
-      return false
-    })
-    console.log(filteredData);
-    
-    setData({
-      ...data,
-      productRequests: filteredData
-    })
-  };
+        setData({
+          ...data,
+          productRequests: filteredData
+        })
+  }
+
+  
   
   return (
     <label className="category-label">

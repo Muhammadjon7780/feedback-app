@@ -1,0 +1,58 @@
+
+
+.edit-container{
+  
+    &::before{
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      background-image: url("../../assets/images/edit-icon.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top center;
+      position: absolute;
+      top: -28px;
+      left: 42px;
+      content: "";
+    }
+  
+}
+
+
+.edit-btn-wrap{
+  display: flex;
+  align-items: center;
+  // justify-content: flex-end;
+  // justify-content: flex-start;
+  margin-right: 42px;
+}
+
+.edit-btn{
+margin-left: auto;
+}
+
+.delete-btn{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  background-color: #D73737;
+  margin-left: 42px;
+
+  &:hover{
+    background-color: #E98888;
+  }
+}
+
+.edit-cancel-btn{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20.23px;
+  color: #F2F4FE;
+  background-color: #3A4374;
+  margin-left: 110px;
+
+  &:hover{
+    background-color: #656EA3;
+  }
+}

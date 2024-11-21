@@ -4,7 +4,7 @@ import "./input-detail.scss";
 
 
 
-const InputDetail = forwardRef((proporties, ref) =>{
+const InputDetail = (proporties) =>{
 
   const {required, showError, name, ...props} = proporties;
   
@@ -17,7 +17,6 @@ const InputDetail = forwardRef((proporties, ref) =>{
 
       <textarea 
       className={`detail-label__input ${showError?.length ? "error-title__show" : ""}`}
-      ref={ref} 
       type="text"
       placeholder="text"
       required={required}
@@ -32,6 +31,6 @@ const InputDetail = forwardRef((proporties, ref) =>{
       
       </>
   )
-})
+}
 
 export default InputDetail;

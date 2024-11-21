@@ -3,34 +3,17 @@
   import UpvotSvg from "../upvote-svg/upvote-svg";
   import "./input-category.scss";
 
-  const options = [
-    {
-      text: "Feature",
-      value: 1,
-    },
-    {
-      text: "UI",
-      value: 2,
-    },
-    {
-      text: "UX",
-      value: 3,
-    },
-    {
-      text: "Enhancement",
-      value: 4,
-    },
-    {
-      text: "Bug",
-      value: 5,
-    },
-  ];
 
+
+
+
+  
   const InputCategory = forwardRef((proporties, ref) => {
-  const {...props} = proporties
+
+  const {options=[], value, ...props} = proporties
+  
     
     const [isSortOpen, setSortOpen] = useState(false);
-    const [sortValue, setSortValue] = useState(options[0]?.value);
 
     const toggleSortPopup = () => {
       setSortOpen(!isSortOpen);
@@ -41,10 +24,9 @@
 
       const values = +evt.target.value;
 
-      setSortValue(values);
-
       setSortOpen(false);
     };
+
 
     return (
       <div className="add-category-wrap">
@@ -57,7 +39,7 @@
 
         <div className="option__btn-wrap">
           <button type="button" className="option-btn" onClick={toggleSortPopup}>
-            {options.find((option) => option.value == +sortValue).text}
+            {options?.find((option) => option?.value == value)?.text}
           </button>
           <UpvotSvg className="option-svg" isOpen={isSortOpen} />
         </div>
@@ -66,11 +48,9 @@
           className="add-category-wrap__popup"
           ref={ref}
           onOptionChange={handleCategoryChange}
-          checkedValue={sortValue}
-          value={sortValue}
+          value={+value}
           isOpen={isSortOpen}
           options={options}
-          // name="add"
           width="456px"
         { ...props}
         />
@@ -78,3 +58,8 @@
     );
   })
   export default InputCategory;
+
+
+
+
+
