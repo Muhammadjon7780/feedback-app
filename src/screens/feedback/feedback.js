@@ -8,6 +8,11 @@ import Comment from "../../components/comment/comment";
 import "./feedback.scss";
 import Container from "../../components/container/container";
 import Button from "../../components/button/button";
+import AvatarImg from "../../components/avatar-img/avatar-img";
+import FilterBox from "../../components/filter-box/filter-box";
+import ReplyButton from "../../components/reply-button/reply-button";
+import PostReply from "../../components/post-reply/post-reply";
+import CommentBox from "../../components/comment-box/comment-box";
 
 const Feedback = () => {
   const { id } = useParams();
@@ -46,13 +51,38 @@ const Feedback = () => {
           </div>
         </FeedbackBox>
 
-        <section className="feedback-comment">
-          <p className="comment-number">{post.comments?.length} Comments</p>
+        {post.comments ? (
+          <section className="feedback-comment">
+            <p className="comment-number">
+              {post.comments ? post.comments?.length + " Comments" : ""}
+            </p>
+            <div className="comment-section">
+              {post.comments?.map((comment) => (
 
-          <div className="feedback-comment__comment-box">
+                <CommentBox 
+                className="comment" 
+                dataItem={comment} 
+                key={comment.id} 
+                />
+              ))}
+            </div>
 
-          </div>
-        </section>
+            <div className="reply-section">
+              {post.comments?.map((comment) =>
+                comment.replies?.map((reply, index) => (
+                  <CommentBox dataItem={reply} key={index} />
+                ))
+              )}
+            </div>
+
+          </section>
+        ) : (
+          []
+        )}
+            <div className="add-comment">
+              <h3 className="add-comment__title">Add Comment</h3>
+              <PostReply className="add-comment__content"/>
+            </div>
       </section>
     </Container>
 

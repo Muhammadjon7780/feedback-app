@@ -13,6 +13,7 @@ import FeedbackBox from "../../components/feedback-box/feedback-box";
 import Category from "../../components/category/category";
 import Comment from "../../components/comment/comment";
 import NoFeedback from "../../components/no-feedback/no-feedback";
+import Rest from "../../components/smt/smt";
 
 const Main = () => {
   const { data } = useData();
@@ -20,7 +21,11 @@ const Main = () => {
   return (
     <main className="main">
       <Container className="main__container">
+      
+
         <div className="main__filter">
+
+
           <MainTitle />
           <ProductsFilter />
         </div>

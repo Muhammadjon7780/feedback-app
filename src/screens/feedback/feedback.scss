@@ -28,18 +28,16 @@
   }
 
   &-box__inner {
-
     &-upvote-btn {
       pointer-events: all;
 
-      &:hover .feedback-title__inner{
-      color: #3a4374;
+      &:hover .feedback-title__inner {
+        color: #3a4374;
       }
     }
   }
 
-
-  &-inner__title{
+  &-inner__title {
     display: inline-block;
     margin: 0;
     margin-bottom: 4px;
@@ -48,19 +46,131 @@
     font-weight: 700;
     line-height: 26.01px;
     text-decoration: none;
-    color: #3A4374;
+    color: #3a4374;
   }
 
+  &-comment {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26.01px;
+    color: #3a4374;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 24px 32px 48px 32px;
+  }
+}
 
-  &-comment{
+.comment-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.user-img {
+  display: inline-block;
+  margin-right: 32px;
+}
+.user-data-box {
+  // display: inline;
+  // margin-left: 72px;
+
+  &__name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20.23px;
+    color: #3a4374;
+    margin: 0;
+  }
+
+  &__username {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.23px;
+    color: #647196;
+  }
+
+  &__content {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21.68px;
+    color: #647196;
+    margin-left: 72px;
+  }
+}
+
+.reply {
+  padding-left: 45px;
+  margin-bottom: 32px;
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+
+    &__avatar {
+      display: inline-block;
+    }
+    &__details {
+      margin-left: 32px;
+    }
+    &__name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20.23px;
+      color: #3a4374;
+      margin: 0;
+    }
+    &__username {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20.23px;
+      color: #647196;
+    }
+  }
+
+  &__content {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21.68px;
+    color: #647196;
+    margin-left: 72px;
+
+    &__replying-to {
+      font-family: Jost;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 21.68px;
+      color: #ad1fea;
+    }
+  }
+}
+.comment {
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.add-comment {
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 24px 32px 32px 34px;
+  margin-top: 24px;
+
+  &__title {
     font-size: 18px;
     font-weight: 700;
     line-height: 26.01px;
     color: #3A4374;
-    background-color: #fff;
-    
-    // &__comment-box{
+  }
 
-    // }
+  &__content {
+    flex-direction: column;
+    margin: 0px;
+    margin-left: 0;
+
   }
 }
