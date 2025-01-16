@@ -1,5 +1,3 @@
-// import { useContext } from "react";
-// import { DataContext } from "../../contexts/context-data";
 import MainTitle from "../../components/main-title/main-title";
 import Container from "../../components/container/container";
 
@@ -13,7 +11,6 @@ import FeedbackBox from "../../components/feedback-box/feedback-box";
 import Category from "../../components/category/category";
 import Comment from "../../components/comment/comment";
 import NoFeedback from "../../components/no-feedback/no-feedback";
-import Rest from "../../components/smt/smt";
 
 const Main = () => {
   const { data } = useData();

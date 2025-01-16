@@ -8,29 +8,34 @@ import { useMemo } from "react";
 const RoadMapFilter = () => {
   const { data } = useData();
 
-  const count = useMemo(() => data.productRequests.reduce((accumulator, product) => {
-      
-      switch (product.status) {
-        case "suggestion":
-            ++accumulator.suggestion;
-          break;
-          case "planned":
-             ++accumulator.planned;
-          break;
-          case "in-progress":
-             ++accumulator.inProgress;
-          break;
-          default:
-             ++accumulator.live;
-      }
-      return accumulator;
-    }, {
-      suggestion: 0,
-      planned: 0,
-      inProgress: 0,
-      live: 0 
-  }), [data]);
-    
+  const count = useMemo(
+    () =>
+      data.productRequests.reduce(
+        (accumulator, product) => {
+          switch (product.status) {
+            case "suggestion":
+              ++accumulator.suggestion;
+              break;
+            case "planned":
+              ++accumulator.planned;
+              break;
+            case "in-progress":
+              ++accumulator.inProgress;
+              break;
+            default:
+              ++accumulator.live;
+          }
+          return accumulator;
+        },
+        {
+          suggestion: 0,
+          planned: 0,
+          inProgress: 0,
+          live: 0,
+        }
+      ),
+    [data]
+  );
 
   return (
     <FilterBox className="roadmap__figure__wrap">
@@ -61,15 +66,8 @@ const RoadMapFilter = () => {
           <span className="roadmap__box-live"></span>
           <p className="roadmap__box-text">Live: {count.live}</p>
         </div>
-
       </div>
     </FilterBox>
   );
 };
 export default RoadMapFilter;
-
-
-
-
-
-

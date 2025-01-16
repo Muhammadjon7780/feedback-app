@@ -1,23 +1,24 @@
-.comment-box{
+.comment-box {
   display: flex;
   align-items: center;
   margin-left: auto;
 
-  &__icon{
+  &__icon {
     display: block;
     width: 18px;
     height: 18px;
-    background: url("../../assets/images/comment-img.svg") no-repeat center center;
+    background: url("../../assets/images/comment-img.svg") no-repeat center
+      center;
     background-size: contain;
     margin-right: 8px;
   }
 
-  &__count{
+  &__count {
     font-family: Jost;
     font-size: 16px;
     font-weight: 700;
     line-height: 23px;
     text-align: center;
-    color: #3A4374;
+    color: #3a4374;
   }
 }

@@ -1,24 +1,25 @@
-.no-feedback{
+.no-feedback {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0px auto;
   padding: 111px 0;
 
-  &__image{
+  &__image {
     display: block;
     width: 129px;
     height: 136px;
     margin-bottom: 53px;
-    background: url("../../assets/images/no-feedback.png") no-repeat center center;
+    background: url("../../assets/images/no-feedback.png") no-repeat center
+      center;
     background-size: auto;
   }
 
-  &-content{
+  &-content {
     width: 450px;
     margin: 0 auto;
-    
-    &__title{
+
+    &__title {
       margin: 0;
       padding: 0;
       font-family: Jost;
@@ -27,11 +28,10 @@
       line-height: 34.68px;
       text-align: center;
       margin-bottom: 16px;
-      color: #3A4374;
-      
+      color: #3a4374;
     }
-    
-    &__desc{
+
+    &__desc {
       margin: 0;
       padding: 0;
       font-family: Jost;
@@ -40,12 +40,11 @@
       line-height: 23.12px;
       text-align: center;
       color: #647196;
-      margin-bottom: 48px;      
-      
+      margin-bottom: 48px;
     }
   }
 
-  &__btn{
+  &__btn {
     text-align: center;
     margin: 0 auto;
     text-decoration: none;

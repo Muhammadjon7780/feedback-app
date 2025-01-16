@@ -1,13 +1,12 @@
-import CategoryFilter from "../category-filter/category-filter"
-import RoadMapFilter from "../roadmap-filter/roadmap-filter"
+import CategoryFilter from "../category-filter/category-filter";
+import RoadMapFilter from "../roadmap-filter/roadmap-filter";
 
-const ProductsFilter = () =>{
-
-  return(
+const ProductsFilter = () => {
+  return (
     <form>
-      <CategoryFilter/>
-      <RoadMapFilter/>
+      <CategoryFilter />
+      <RoadMapFilter />
     </form>
-  )
-}
+  );
+};
 export default ProductsFilter;

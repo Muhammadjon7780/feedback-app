@@ -8,7 +8,9 @@ const InputTitle = ({ showTitleError, ...props }) => {
         Add a short, descriptive headline
       </span>
       <input
-        className={`title-input ${showTitleError.length ? "title-input--show" : ""}`}
+        className={`title-input ${
+          showTitleError.length ? "title-input--show" : ""
+        }`}
         type="text"
         placeholder="text"
         {...props}

@@ -1,16 +1,14 @@
-
-.title-label{
+.title-label {
   display: block;
   font-family: Jost;
   font-size: 14px;
   font-weight: 700;
   line-height: 20.23px;
-  color: #3A4374;
+  color: #3a4374;
   margin-left: 42px;
   margin-bottom: 24px;
 
-  
-  &__span{
+  &__span {
     display: block;
     font-family: Jost;
     font-size: 14px;
@@ -18,28 +16,25 @@
     line-height: 20.23px;
     color: #647196;
     margin-bottom: 16px;
-    
   }
 }
 
-.title-input{
+.title-input {
   display: block;
   width: 456px;
   height: 48px;
-  background-color: #F7F8FD;
+  background-color: #f7f8fd;
   border: none;
   border-radius: 5px;
   outline: none;
-  outline-color: #4661E6;
+  outline-color: #4661e6;
 
-
-  &:hover{
-  outline: 2px solid #4661E6;
-  cursor: pointer;
-  
+  &:hover {
+    outline: 2px solid #4661e6;
+    cursor: pointer;
   }
 
-  &--show{
-    outline: 2px solid #D73737;
+  &--show {
+    outline: 2px solid #d73737;
   }
 }

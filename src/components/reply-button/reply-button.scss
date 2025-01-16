@@ -1,14 +1,14 @@
 @import "../../sass/mixins.scss";
 
-.reply-btn{
+.reply-btn {
   @include reset-btn;
   font-size: 13px;
   font-weight: 600;
   line-height: 18.79px;
-  color: #4661E6;  
+  color: #4661e6;
   margin-left: auto;
 
-  &:hover{
+  &:hover {
     text-decoration-line: underline;
     text-decoration-style: solid;
   }

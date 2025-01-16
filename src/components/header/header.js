@@ -1,7 +1,6 @@
 import { useData } from "../../contexts/context-data";
 import Button from "../button/button";
 import SelectPopup from "../select-popup/select-popup";
-import Smt from "../smt/smt";
 import SortButton from "../sort-button/sort-button";
 import "./header.scss";
 import { useState } from "react";

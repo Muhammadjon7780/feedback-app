@@ -1,20 +1,18 @@
 @import "../../sass/mixins";
 @import "../../sass/variables";
 
-
-.sort-btn-wrap{
+.sort-btn-wrap {
   display: flex;
   align-items: center;
-  
 }
 
-.sort-button{
+.sort-button {
   @include reset-btn;
   text-align: center;
   display: block;
   width: fit-content;
-  background-color: #373F68;
-  color: #F2F4FE;
+  background-color: #373f68;
+  color: #f2f4fe;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -25,11 +23,8 @@
   font-weight: 400;
   line-height: 20px;
   margin-right: 4px;
-  
-  
-  
-  
-  &__arrow{
+
+  &__arrow {
     display: inline-block;
     width: 14px;
     height: 6px;
@@ -38,22 +33,15 @@
     margin-top: 3px;
     transition: 0.2s ease all;
 
-
-    &--closed{
+    &--closed {
       display: block;
-      // background: url("../../assets/images/close-arrow.svg") no-repeat top right;
-      // background-size: contain;
     }
 
-      &--opened{
-        display: block;
-        width: 14px;
-        height: 6px;
-        // background: url("../../assets/images/open-arrow.svg") no-repeat top right;
-        // background-size: contain;
-        transform: rotate(180deg);
-        
+    &--opened {
+      display: block;
+      width: 14px;
+      height: 6px;
+      transform: rotate(180deg);
     }
   }
-  
 }
